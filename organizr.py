@@ -14,6 +14,28 @@ def select_folder():
    print(pathv)
    
 #file organizer
+def file_cleaner():
+   folder_paths = [
+    r'C:\Windows\Temp',
+    r'C:\Windows\Prefetch',
+    r'C:\Users\ADMIN\AppData\Local\Temp'
+   ]
+   for folder_path in folder_paths:
+    # List all files in the folder
+       files = os.listdir(folder_path)
+# List all files in the folder
+   files = os.listdir(folder_path)
+
+# Iterate through the files and delete them
+   for file in files:
+      file_path = os.path.join(folder_path, file)
+      try:
+           if os.path.isfile(file_path):
+              os.remove(file_path)
+              print(f"Deleted: {file_path}")
+      except Exception as e:
+          print(f"Error deleting {file_path}: {e}")
+
 
 def file_organizer():
    audio = (".3ga", ".aac", ".ac3", ".aif", ".aiff",
@@ -86,5 +108,7 @@ l2.pack(padx=20)
 button= ctk.CTkButton(app, text="Select", command= select_folder)
 button.pack(ipadx=5, pady=15)
 b2=ctk.CTkButton(app, text="Submit", command= file_organizer)
-b2.pack()
+b2.pack(ipadx=5, pady=15)
+b3=ctk.CTkButton(app, text="Clean", command= file_cleaner)
+b3.pack(ipadx=5, pady=15)
 app.mainloop()
