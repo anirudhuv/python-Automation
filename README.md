@@ -20,7 +20,7 @@ A Python app using Tkinter to organize files by categorizing them into folders b
 - Uses Tkinter for GUI.
 - CustomTkinter library for styled widgets.
 
-## Temp File Deletion Script
+## File Deletion Script
 
 A Python script to clean up temporary files in specified folders.
 
